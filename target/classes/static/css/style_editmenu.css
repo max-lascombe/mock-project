@@ -1,0 +1,35 @@
+
+body {
+    margin: 10px;
+}
+
+.check-container { border:2px solid #ccc; width:300px; height: 100px; padding-left: 10px; padding-top: 5px; overflow-y: scroll; }
+
+.spacing {
+    padding-bottom: 1rem;
+}
+
+.spacing-btn-group {
+    padding-bottom: 2rem;
+}
+
+.spacing-checkbox {
+    margin-left: 0.7rem;
+}
+
+input[type=checkbox] {
+    transform: scale(1.5);
+}
+
+.inactiveLink {
+    pointer-events: none;
+    cursor: default;
+ }
+ 
+.logo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+  
