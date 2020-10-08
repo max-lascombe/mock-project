@@ -1,5 +1,5 @@
 .image-container{
-    background: url('/Login Form/image/Kale.jpg') center no-repeat;
+    background: url('/src/main/resources/static/images/kale_Gal.jpg') center no-repeat;
     background-size: cover;
     height: 100vh;
 }
@@ -149,4 +149,7 @@
 .Guest {
     color: inherit;
     text-decoration: none;
+}
+.OrderToAdress{
+    color: inherit;
 }

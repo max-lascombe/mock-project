@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" xmlns:th = "http://www.thymeleaf.org">
 <head>
 	<title>Register Form</title>
 	<meta charset="utf-8">
@@ -17,15 +17,15 @@
 			<div class="col-lg-6 col-md-6 form-container">
 				<div class="col-lg-8 col-md-12 col-sm-9 col-xs-12 form-box text-center">
 					<div class="logo mb-3">
-						<a href="/Login Form/login.html"><img src="/Login Form/image/DKK Logo.png" class="logo" ></a>
+						<a href="/src/main/resources/templates/login.html"><img src="/src/main/resources/static/images/dunkinskalekitchenLogo.png" class="logo" ></a>
 					</div>
 					<div class="heading mb-4">
 						<h4>Create an Account</h4>
 					</div>
-					<form  id="myform" method="POST" action="action.html">
+					<form action="#" th:action="@{/register}" th:object="${user}" method="post">
 						<div class="form-input">
 							<span><i class="fa fa-envelope"></i></span>
-							<input type="email" placeholder="Email Address" required>
+							<input type="email" th:field="*{EmailAddress}" placeholder="Email Address" required>
 						</div>
 						<div class="form-input">
 							<span><i class="fa fa-lock"></i></span>
@@ -40,7 +40,7 @@
 							</div>
 						</div>
 						<div class="text-left mb-3">
-							<button type="submit" class="btn"><a href="Order.html" class="light">Register</a>
+							<button type="submit" class="btn">Register
 
 							</button>
 						</div>
