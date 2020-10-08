@@ -18,7 +18,7 @@ public class LoginController {
   }
   @PostMapping("/register")
   public String submitForm(@ModelAttribute("user") User user) {
-    System.out.printlin("user");
+    System.out.println("user");
     return "login";
   }
 }
