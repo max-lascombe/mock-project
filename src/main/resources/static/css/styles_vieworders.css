@@ -1,5 +1,13 @@
 body {
-    background-image: url('../images/Kale.jpg');
+        background-image: url('../images/kale_Gal.jpg');
+         /* Full height */
+        height: 100%;
+
+        /* Center and scale the image nicely */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-color:rgb(132, 163, 163);
 }
 
 
@@ -40,7 +48,7 @@ body {
   }
 
   .board-list {
-    background-color: rgb(235, 236, 240);
+    background-color:rgb(132, 163, 163);
     border-radius: 3px;
     display: grid;
     grid-auto-rows: max-content;
