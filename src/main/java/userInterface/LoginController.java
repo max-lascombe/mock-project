@@ -14,10 +14,11 @@ public class LoginController {
   public String showForm(Model model ){
     User user = new User();
     model.addAttribute("user", user);
-    return "login";
+    return "register";
   }
   @PostMapping("/register")
   public String submitForm(@ModelAttribute("user") User user) {
+    System.out.printlin("user");
     return "login";
   }
 }
