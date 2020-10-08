@@ -15,7 +15,7 @@
     
     	
 </head>
-<body>
+<body style = "background-color:rgb(132, 163, 163);">
     <!-- Navbar text is light and background is dark -->
     <nav class="navbar navbar-dark bg-dark" id="navbar"> 
         <a class="navbar-brand" href="#"> 
@@ -46,7 +46,7 @@ Invite Guests:</p>
  <p th:text="${address.guestEmails}"></p>
  <form action="#" th:action="@{/addressConfirmation}" method="post">
  <div class="col text-center">
- <button type="submit" class="btn btn-outline-success font-weight-bold">Start Order</button>
+ <button type="submit" class="btn btn-success font-weight-bold">Start Order</button>
  </div>
  </form>
 </div>
