@@ -25,13 +25,6 @@ public class CustomerController {
 		
 		return "Address_Form";
 	}
-		
-	/*
-	@PostMapping("/address")
-	public String submitForm(@ModelAttribute("address") Address address) {
-		return "AddressConfirmation";
-	} 
-	 */
 	
 	@PostMapping("/address")
 	public String submitForm(@ModelAttribute("address") Address address) {
