@@ -1,5 +1,6 @@
 package userInterface;
 
+
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Address {
@@ -63,5 +64,7 @@ public class Address {
 		return "Address [address1=" + address1 + ", address2=" + address2 + ", city=" + city + ", state=" + state
 				+ ", zipcode=" + zipcode + ", time=" + time + ", guestEmails=" + guestEmails + "]";
 	}
-
+	
+	
+	
 }
