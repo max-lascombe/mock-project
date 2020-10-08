@@ -15,20 +15,21 @@
     
     	
 </head>
-<body>
+<body style = "background-color:rgb(132, 163, 163);">
     <!-- Navbar text is light and background is dark -->
     <nav class="navbar navbar-dark bg-dark" id="navbar"> 
         <a class="navbar-brand" href="#"> 
           <img src="images/dunkinskalekitchenLogo.png" alt="Logo" style= "max-width:400; height:60;">
       </a> 
     </nav>
+    <!--  
     <div class="bg-img">
   <div class="container">
     <div class="topnav">
     </div>
   </div>
 </div>
-
+-->
 <!--  Address Form  -->
       <h2 class="text-center font-weight-bold">
 Confirm Your Delivery Details </h2>
@@ -43,9 +44,11 @@ Delivery Time:</p>
  <p class="font-weight-bold">
 Invite Guests:</p>
  <p th:text="${address.guestEmails}"></p>
+ <form action="#" th:action="@{/addressConfirmation}" method="post">
  <div class="col text-center">
- <button type="submit" th:onclick="|window.location.href='/menu'|" class="btn btn-outline-success font-weight-bold">Start Order</button>
+ <button type="submit" class="btn btn-success font-weight-bold">Start Order</button>
  </div>
+ </form>
 </div>
 
 
