@@ -1,4 +1,4 @@
-package delivery.customer.model;
+package userInterface;
 
 public class Delivery {
 	

@@ -10,15 +10,15 @@ import org.springframework.web.bind.annotation.PostMapping;
 @Controller
 public class LoginController {
   
-  @GetMapping("/register")
-  public String showForm(Model model ){
+  @GetMapping("/")
+  public String showForm(Model model){
     User user = new User();
     model.addAttribute("user", user);
     return "register";
   }
   @PostMapping("/register")
   public String submitForm(@ModelAttribute("user") User user) {
-    System.out.printlin("user");
+    System.out.println("user");
     return "login";
   }
 }

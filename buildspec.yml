@@ -1,0 +1,16 @@
+version: 0.2
+
+phases:
+  build:
+    commands:
+       - echo "Hello from build stage"
+       - apt-get update -y
+       - java --version
+       - apt-get install maven -y
+       - mvn -version
+       - mvn clean package spring-boot:repackage 
+artifacts:
+  files:
+    - target/delivery-services-0.0.1-SNAPSHOT.jar
+    - appspec.yml
+  discard-paths: yes
