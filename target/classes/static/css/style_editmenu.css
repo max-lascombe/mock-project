@@ -1,16 +1,23 @@
 
 body {
     margin: 10px;
+    background-color:rgb(132, 163, 163);
+    
+}
+
+.table {
+	background-color: #ffffff; 
+	margin-bottom: 5px;
 }
 
 .check-container { border:2px solid #ccc; width:300px; height: 100px; padding-left: 10px; padding-top: 5px; overflow-y: scroll; }
 
 .spacing {
-    padding-bottom: 1rem;
+    padding-bottom: 0.7rem;
 }
 
 .spacing-btn-group {
-    padding-bottom: 2rem;
+    padding-bottom: 10px;
 }
 
 .spacing-checkbox {
@@ -31,5 +38,7 @@ input[type=checkbox] {
   margin-left: auto;
   margin-right: auto;
   width: 50%;
+  margin-bottom: 10px;
+  max-width: 500px;
 }
   

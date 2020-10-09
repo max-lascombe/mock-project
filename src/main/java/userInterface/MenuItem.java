@@ -2,37 +2,30 @@ package userInterface;
 
 import java.util.ArrayList;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class MenuItem {
-	   private Boolean selected;
+	   private Boolean remove;
 	   private String name;
-	   private String modifications;
-	   private String description;
 	   private ArrayList<Ingredient> ingredients;
 
 	   public MenuItem() {
 	   }
 
-	   public MenuItem(Boolean selected, String clientID, String modifications, String description, ArrayList<Ingredient> ing) {
+	   public MenuItem(Boolean remove, String name, ArrayList<Ingredient> ing) {
 	      super();
-	      this.selected = selected;
-	      this.name = clientID;
-	      this.modifications = "";
-	      this.description = description;
+	      this.remove = remove;
+	      this.name = name;
 	      this.ingredients = ing;
-	      
-	      for(Ingredient i : ing) {
-	    	  if(i.isOut())
-	    		  this.modifications += "No " + i.getName() + ", ";
-	      }
-	      this.modifications = this.modifications.substring(0, this.modifications.length()-2);
 	   }
 
-	public Boolean getSelected() {
-		return selected;
+		@JsonProperty("removed")
+	public Boolean getRemove() {
+		return remove;
 	}
 
-	public void setSelected(Boolean selected) {
-		this.selected = selected;
+	public void setRemove(Boolean selected) {
+		this.remove = selected;
 	}
 
 	public String getName() {
@@ -44,25 +37,21 @@ public class MenuItem {
 	}
 
 	public String getModifications() {
-		return modifications;
+		String mods = "";
+		for(Ingredient i : ingredients) {
+	    	  if(i.isOut())
+	    		  mods += "No " + i.getName() + ", ";
+	      }
+			if(mods.length() > 2) {
+				mods = mods.substring(0, mods.length()-2);
+			}
+		return mods;
 	}
-
-	public void setModifications(String modifications) {
-		this.modifications = modifications;
-	}
-
-	public String getDescription() {
-		return description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-	}
-
+	
 	@Override
 	public String toString() {
-		return "MenuItem [selected=" + selected + ", itemName=" + name + ", ipAddress=" + modifications
-				+ ", description=" + description + "]";
+		return "MenuItem [remove=" + remove + ", itemName=" + name
+				+ ", description=" + "]";
 	}
 
 	public ArrayList<Ingredient> getIngredients() {
@@ -72,7 +61,5 @@ public class MenuItem {
 	public void setIngredients(ArrayList<Ingredient> ingredients) {
 		this.ingredients = ingredients;
 	}
-	
-	
 	   
 	}
