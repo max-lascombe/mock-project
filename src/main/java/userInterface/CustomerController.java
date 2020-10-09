@@ -1,10 +1,15 @@
 package userInterface;
 
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.client.RestTemplate;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.gson.Gson;
 
 @Controller
 public class CustomerController {
@@ -16,13 +21,6 @@ public class CustomerController {
 		
 		return "Address_Form";
 	}
-		
-	/*
-	@PostMapping("/address")
-	public String submitForm(@ModelAttribute("address") Address address) {
-		return "AddressConfirmation";
-	} 
-	 */
 	
 	@PostMapping("/address")
 	public String submitForm(@ModelAttribute("address") Address address) {
@@ -36,8 +34,22 @@ public class CustomerController {
 		return "AddressConfirmation";
 	}
 	
+
+	@PostMapping("/addressConfirmation")
+	private String postAddress(@ModelAttribute("address") Address address)
+	{
+	    String uri = "https://anypoint.mulesoft.com/exchange/8eaaedc4-7e9e-4a3c-a9a9-b2ed01022f30/orders/";
+	    RestTemplate restTemplate = new RestTemplate();
+	     	     
+	    restTemplate.postForObject( uri, address, Address.class);
+	    
+	    //return "Menu";
+	    return "Menu";
+
+	}
+	
+	
 	@GetMapping("/menu")
-<<<<<<< HEAD
 	private String showMenu()
 	{
 	    final String uri = "http://menu.us-e2.cloudhub.io/menu";
@@ -58,16 +70,13 @@ public class CustomerController {
 	    
 	    return "Menu";
 
-=======
-	public String showMenu() {
-		return "Menu";
->>>>>>> 88d4f931707e29cdca6a045fad450c9101de90a2
 	}
+
 	
 	@GetMapping("/orderConfirmation")
 	public String confirmOrder() {
 		return "OrderConfirmation";
 	}
 	
-		}
+}
 
