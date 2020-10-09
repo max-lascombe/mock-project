@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Bootstrap 4, from LayoutIt!</title>
+    <title>Duncan's Kale Kitchen</title>
 
     <meta name="description" content="Source code generated using layoutit.com">
     <meta name="author" content="LayoutIt!">
@@ -19,10 +19,10 @@
 	<div class="row">
 		<div class="col-md-12">
       
-      <img src="images/logo.png" class="logo img-fluid mx-auto d-block" alt="Responsive image">
+      <img src="images/logo.png" class="logo img-fluid mx-auto d-block rounded" alt="Responsive image">
       
-      <div class="row spacing">
-				<div class="col-md-12 text-center spacing-btn-group">
+      <div class="row">
+				<div class="col-md-12 text-center spacing">
           <div class="btn-group text-center" role="group">
             <a href="/vieworders" class="btn btn-info" role="button">View Orders</a>
             <a href="/modifymenu" class="btn btn-info" role="button">Modify Menu</a>
@@ -36,24 +36,22 @@
             <th scope="col">Food Item</th>
             <th scope="col">Remove Item</th>
             <th scope="col">Remove Ingredients</th>
-            <th scope="col">Modifications/Deletions</th>
+            <th scope="col">Currently Removed Ingredients</th>
           </tr>
         </thead>
         <tbody>
         <tr th:each="currentItem, stat : *{itemList}">
         	   <th scope="row" th:text="${currentItem.getName()}"></th>
 		       <td>
-                  <input type="checkbox" th:field="*{itemList[__${stat.index}__].selected}" />
+                  <input type="checkbox" th:field="*{itemList[__${stat.index}__].remove}" />
 		          
 		          <input type="hidden" th:field="*{itemList[__${stat.index}__].name}" />
-		          <input type="hidden" th:field="*{itemList[__${stat.index}__].modifications}" />
-		          <input type="hidden" th:field="*{itemList[__${stat.index}__].description}" />
 		       </td>
 		       <td>
 		       <div class="check-container">
 		       		<th:block  th:each="ingredient, i: ${currentItem.ingredients}">
 		       			<input type="hidden" th:field="*{itemList[__${stat.index}__].ingredients[__${i.index}__].name}" />
-		    			<label><input type="checkbox" th:field="*{itemList[__${stat.index}__].ingredients[__${i.index}__].out}" /> &nbsp[[${ingredient.getName()}]] </label><br />          	
+		    			<label id="label"><input type="checkbox" th:field="*{itemList[__${stat.index}__].ingredients[__${i.index}__].out}" /> &nbsp[[${ingredient.getName()}]] </label><br />          	
 				    </th:block>
 				</div>
 

@@ -1,19 +1,15 @@
 package userInterface;
 
-import java.awt.PageAttributes.MediaType;
 
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.client.RestTemplate;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.gson.Gson;
 
 @Controller
 public class CustomerController {
@@ -42,23 +38,45 @@ public class CustomerController {
 	@PostMapping("/addressConfirmation")
 	private String postAddress(@ModelAttribute("address") Address address)
 	{
-	    final String uri = "https://anypoint.mulesoft.com/exchange/8eaaedc4-7e9e-4a3c-a9a9-b2ed01022f30/orders/";
+	    String uri = "https://anypoint.mulesoft.com/exchange/8eaaedc4-7e9e-4a3c-a9a9-b2ed01022f30/orders/";
 	    RestTemplate restTemplate = new RestTemplate();
 	     	     
 	    restTemplate.postForObject( uri, address, Address.class);
-	    return ("/menu");
+	    
+	    //return "Menu";
+	    return "Menu";
 
 	}
 	
+	
 	@GetMapping("/menu")
-	public String showMenu() {
-		return "Menu";
+	private String showMenu()
+	{
+	    final String uri = "http://menu.us-e2.cloudhub.io/menu";
+
+	    RestTemplate restTemplate = new RestTemplate();
+	 
+	    String result = restTemplate.getForObject(uri, String.class);
+	    
+	    Gson gson = new Gson();
+	    
+	    //System.out.println(result);
+	 
+	    
+	    MenuSchema menuschema = gson.fromJson(result, MenuSchema.class);
+	    
+	    
+	    //System.out.println(menuschema);
+	    
+	    return "Menu";
+
 	}
+
 	
 	@GetMapping("/orderConfirmation")
 	public String confirmOrder() {
 		return "OrderConfirmation";
 	}
 	
-		}
+}
 

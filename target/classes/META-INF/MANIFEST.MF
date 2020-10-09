@@ -1,10 +1,11 @@
 Manifest-Version: 1.0
-Built-By: prajgaik
-Build-Jdk: 14.0.2
+Built-By: dalding
+Build-Jdk: 12
 Implementation-Title: delivery-services
 Implementation-Version: 0.0.1-SNAPSHOT
 Implementation-Vendor-Id: DuncansKaleKitchen
 Implementation-URL: https://spring.io/projects/spring-boot/delivery-serv
  ices
+Main-Class: userInterface.Application
 Created-By: Maven Integration for Eclipse
 

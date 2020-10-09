@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Duncan's Kale Kitchen</title>
+
+    <meta name="description" content="Source code generated using layoutit.com">
+    <meta name="author" content="LayoutIt!">
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/driver_style.css" rel="stylesheet">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+  </head>
+  <body>
+
+  <div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12">
+		
+		<img src="images/logo.png" class="logo img-fluid mx-auto d-block rounded" alt="Responsive image">
+		
+        <h3 class="text-center">Hello, Driver!</h3>
+
+        <p id="orderIdText" class="small-text">
+          Order ID:
+        </p>
+        <p id="deliverAddressText" class="">
+          Delivery Address:
+        </p>
+        <p id="pickupAddressText" class="">
+          Restaurant Pickup Address:
+        </p>
+      
+      <h2 class="text-center spacing">
+				Send an Alert
+      </h2>
+      
+      <div class="text-center">
+      <div class="form-check radio">
+		  <input class="form-check-input" type="radio" name="id" id="exampleRadios1" value="1">
+		  <label class="form-check-label" for="exampleRadios1">
+		    Picked Up
+		  </label>
+		</div>
+		<div class="form-check radio">
+		  <input class="form-check-input" type="radio" name="id" id="exampleRadios2" value="2">
+		  <label class="form-check-label" for="exampleRadios2">
+		    Almost There
+		  </label>
+		</div>
+		<div class="form-check radio">
+		  <input class="form-check-input" type="radio" name="id" id="exampleRadios3" value="3">
+		  <label class="form-check-label" for="exampleRadios3">
+		    I'm Here
+		  </label>
+	  </div>
+
+	  
+      </div>
+      
+      <div class=" spacing-overall text-center">
+      <button id="send" class="btn btn-success">Send</button>
+      </div>
+      
+      <div class=" text-center">
+      <button id="finish" class="btn btn-danger">Finish Order</button>
+      </div>
+      
+     </div>
+
+		</div>
+	</div>
+
+
+<!-- Order Ready Modal -->
+<div class="modal fade" id="alertModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title make-black" id="exampleModalLongTitle">Alert!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div id="alertText" class="modal-body">
+        A food order is ready to be picked up at Placeholder
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Reject</button>
+        <button id="acceptOrderBtn" type="button" class="btn btn-primary" data-dismiss="modal">Accept</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Message Modal -->
+<div class="modal fade" id="msgModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title make-black" id="exampleModalLongTitle">Alert!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div id="msgText" class="modal-body">
+        Alert Message
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Dismiss</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Input Modal -->
+<div class="modal fade" id="etaModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title make-black" id="exampleModalLongTitle">Alert!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="form-group spacing-overall">
+            <label for="recipient-name" class="col-form-label make-black">ETA (minutes):</label>
+            <input id="etaField" type="number" class="form-control">
+          </div>
+      <div class="modal-footer">
+        <button id="sendETA" type="button" class="btn btn-primary" data-dismiss="modal">Send</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/driver_scripts.js"></script>
+  </body>
+</html>

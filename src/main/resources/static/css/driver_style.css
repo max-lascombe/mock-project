@@ -1,0 +1,75 @@
+
+.make-black{
+  color: #000000 !important;
+}
+
+body {
+    margin: 2px;
+    background-color:rgb(132, 163, 163);
+}
+
+body, html, .container-fluid {
+  height: 100%;
+}
+
+.spacing {
+    padding-bottom: 1rem;
+}
+
+.spacing-overall {
+    padding: 1rem;
+}
+
+.small-text {
+  font-size: 12px;
+  color: #dddddd;
+}
+
+body h1, h2, h3, h4, h5, p, label{
+  color: #ffffff;
+}
+
+.logo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  min-width: 300px;
+  max-width: 1000px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.spacing-2 {
+  padding-bottom: 3rem;
+}
+
+.spacing-btn-group {
+    padding-bottom: 2rem;
+}
+
+.spacing-checkbox {
+    margin-left: 0.7rem;
+}
+
+input[type=checkbox] {
+    transform: scale(1.5);
+}
+
+.inactiveLink {
+    pointer-events: none;
+    cursor: default;
+ }
+ 
+ .radio {
+ 	margin: 20px;
+ }
+
+ #map {
+  min-height: 500px;
+  height: 100%;
+  display: block;
+}
+
+.container-fluid {
+  max-width: 1000px;
+}
