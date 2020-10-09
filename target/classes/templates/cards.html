@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <title>Restaurant Orders</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+
+    	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+
+ 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+ 		
+    <link rel="stylesheet" type="text/css" href="css/styles_vieworders.css">
+</head>
+<body>
+
+
+      <img src="images/logo.png" class="img-fluid mx-auto d-block" alt="Responsive image">
+    <div class="board-layout">
+
+      
+
+
+    <div class="row spacing">
+        <div class="col-md-12 text-center spacing-btn-group">
+          <div class="btn-group text-center" role="group" aria-label="Basic example">
+            <a href="/vieworders" class="btn btn-info" role="button">View Orders</a>
+            <a href="/modifymenu" class="btn btn-info" role="button">Modify Menu</a>
+          </div>
+        </div>
+    </div>
+
+      <div id='boardlists' class="board-lists">
+        <div id='list1' class="board-list" ondrop="dropIt(event)" ondragover="allowDrop(event)">
+          <div class="list-title">
+            New Orders
+          </div>
+
+          <div id="accordion">
+            <div  id='card1' class="card" draggable="true" ondragstart="dragStart(event)">
+              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                  Group 1
+              </button>
+              <div id="collapseOne" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                <div class="card-body">
+                  <ul>
+                      <li>Item one</li>
+                      <li>Item two</li>
+                      <li>Item three</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <div id="accordion">
+            <div  id='card2' class="card" draggable="true" ondragstart="dragStart(event)">
+              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  Group 2
+              </button>
+              <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                <div class="card-body">
+                  <ul>
+                      <li>Item one</li>
+                      <li>Item two</li>
+                      <li>Item three</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+          <div id="accordion">
+            <div  id='card3' class="card" draggable="true" ondragstart="dragStart(event)">
+              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseTwo">
+                  Group 3
+              </button>
+              <div id="collapseThree" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                <div class="card-body">
+                  <ul>
+                      <li>Item one</li>
+                      <li>Item two</li>
+                      <li>Item three</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="accordion">
+            <div  id='card4' class="card" draggable="true" ondragstart="dragStart(event)">
+              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                  Group 4
+              </button>
+              <div id="collapseFour" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                <div class="card-body">
+                  <ul>
+                      <li>Item one</li>
+                      <li>Item two</li>
+                      <li>Item three</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <div id="accordion">
+            <div  id='card5' class="card" draggable="true" ondragstart="dragStart(event)">
+              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                  Group 5
+              </button>
+              <div id="collapseFive" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                <div class="card-body">
+                  <ul>
+                      <li>Item one</li>
+                      <li>Item two</li>
+                      <li>Item three</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div  id='list2' class="board-list" ondrop="dropIt(event)" ondragover="allowDrop(event)">
+          <div  class="list-title">
+          In Progress
+          </div>
+
+
+
+        </div>
+        <div  id='list3' class="board-list"  ondrop="dropIt(event)" ondragover="allowDrop(event)">
+          <div  class="list-title">
+            Completed Orders
+            </div>
+
+            </div>
+      </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+
+ 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src='js/dragdropswap.js'></script>
+</body>
+</html>
