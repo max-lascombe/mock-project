@@ -50,7 +50,7 @@ public class CustomerController {
 	
 	
 	@GetMapping("/menu")
-	private void showMenu()
+	private String showMenu()
 	{
 	    final String uri = "http://menu.us-e2.cloudhub.io/menu";
 
@@ -60,13 +60,15 @@ public class CustomerController {
 	    
 	    Gson gson = new Gson();
 	    
-	    System.out.println(result);
+	    //System.out.println(result);
 	 
 	    
 	    MenuSchema menuschema = gson.fromJson(result, MenuSchema.class);
 	    
 	    
-	    System.out.println(menuschema);
+	    //System.out.println(menuschema);
+	    
+	    return "Menu";
 
 	}
 
